@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Basics syntax - EcmaScript",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "dev": "node index"
@@ -13,5 +14,8 @@
     "Script"
   ],
   "author": "DaCoDeMaNiaK",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
