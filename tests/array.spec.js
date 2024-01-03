@@ -20,6 +20,8 @@ describe(`Array manipulation`, () => {
 
         // Using for... of syntax
         evenValuesNumber = 0
+        
+
         for(const value of array) {
             evenValuesNumber = (value % 2 === 0) ? evenValuesNumber + 1 : evenValuesNumber
         }
@@ -32,8 +34,9 @@ describe(`Array manipulation`, () => {
 
         // Using poor old for syntax
         evenValuesNumber = 0
+        console.table(array)
         for (let i = 0; i < array.length; i++) {
-            value = array[i]
+            let value = array[i]
             evenValuesNumber = (value % 2 === 0) ? evenValuesNumber + 1 : evenValuesNumber
         }
         
