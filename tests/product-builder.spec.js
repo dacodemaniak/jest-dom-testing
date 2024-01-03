@@ -3,7 +3,7 @@ const { ProductBuilder } = require("../products/product-builder.class")
 const { Product } = require("../products/product.class")
 
 describe(`ProductBuilder`, () => {
-    it(`Should be instanciated`, () => {
+    it(`Should be instanciated and to be an instance of Builder too`, () => {
         const productBuilder = new ProductBuilder()
         expect(productBuilder).toBeInstanceOf(ProductBuilder)
         expect(productBuilder).toBeInstanceOf(Builder)
@@ -27,7 +27,7 @@ describe(`ProductBuilder`, () => {
         expect(() => productBuilder.build()).toThrow('Cannot build Product without a Name')
     })
 
-    it(`Should raised an exception if no Name`, () => {
+    it(`Should raised an exception if stock is not valid`, () => {
         const productBuilder = new ProductBuilder()
         productBuilder.id = 'Test'
         productBuilder.name = 'Test'

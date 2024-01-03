@@ -17,6 +17,11 @@ export class Product {
      */
     #stock = 0
 
+    constructor(doIt = null) {
+        if (!doIt)
+            throw new Error(`Cannot instanciate directly a new Product`)
+    }
+
     get id() {
         return this.#id
     }
@@ -47,5 +52,9 @@ export class Product {
         }
 
         this.#stock = stock
+    }
+
+    static getInstance() {
+        return new Product(true)
     }
 }

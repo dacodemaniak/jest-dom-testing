@@ -2,12 +2,12 @@ import { Product } from './../products/product.class'
 
 describe(`Product class`, () => {
     it(`Should make an instance of Product`, () => {
-        const product = new Product()
+        const product = Product.getInstance()
         expect(product).toBeInstanceOf(Product)
     })
 
     it(`Should give back an id, a name and a stock`, () => {
-        const product = new Product()
+        const product = Product.getInstance()
         product.id = '1fe24'
         product.name = 'Test'
         product.stock = 10
@@ -17,5 +17,5 @@ describe(`Product class`, () => {
         expect(product.stock).toEqual(10)
     })
 
-    
+
 })

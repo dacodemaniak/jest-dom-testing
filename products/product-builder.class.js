@@ -40,7 +40,7 @@ export class ProductBuilder extends Builder {
             throw new TypeError(`Stock cannot be negative and must be numeric`)
         }
 
-        const product = new Product()
+        const product = Product.getInstance()
         product.id = this.id
         product.name = this.name
         product.stock = this.stock
