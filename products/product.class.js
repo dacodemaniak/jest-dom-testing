@@ -5,6 +5,7 @@ export class Product {
      */
     #id = ''
 
+
     /**
      * Name of the product
      * @var string
@@ -21,13 +22,12 @@ export class Product {
         if (!doIt)
             throw new Error(`Cannot instanciate directly a new Product`)
     }
-
+    
     get id() {
-        return this.#id
+        return this.#id;
     }
-
     set id(id) {
-        this.#id = id
+        this.#id = id;
     }
 
     get name() {
@@ -43,18 +43,13 @@ export class Product {
     }
 
     set stock(stock) {
-        if (isNaN(stock)) {
-            throw new TypeError(`stock is not a numeric`)
-        }
-
-        if (stock < 0) {
-            throw new Error(`${stock} cannot be negative`)
-        }
-
         this.#stock = stock
     }
+
 
     static getInstance() {
         return new Product(true)
     }
+
+
 }
