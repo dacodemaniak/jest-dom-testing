@@ -7,11 +7,16 @@ export class ProductSet {
         return this.#products
     }
 
+    /**
+     * Add product object to Set
+     * @param {Product} product 
+     * @returns 
+     */
     addProduct(product) {
         if (!(product instanceof Product)) {
             throw new TypeError('product parameter is not of Product type')
         }
-        
+
         this.#products.add(product)
         return this
     }
