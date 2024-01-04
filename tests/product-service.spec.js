@@ -8,11 +8,11 @@ describe(`Product Service`, () => {
     })
 
     it(`Should have 3 products`, () => {
-        expect(service.findAll().length).toEqual(3)
+        expect(service.findAll().getSize()).toEqual(3)
     })
 
     it(`Should'nt have a price attribute`, () => {
         const products = service.findAll()
-        expect(products[0].hasOwnProperty('price')).toBeFalsy()
+        expect(products.getById('16ef53').hasOwnProperty('price')).toBeFalsy()
     })
 })

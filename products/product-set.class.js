@@ -1,10 +1,9 @@
 import { Product } from "./product.class"
-
-export class ProductSet {
-    #products = new Set()
-
-    get products() {
-        return this.#products
+import { ProductCollection } from "./product-collection"
+export class ProductSet extends ProductCollection {
+    constructor() {
+        super()
+        this.products = new Set()
     }
 
     /**
@@ -13,11 +12,9 @@ export class ProductSet {
      * @returns 
      */
     addProduct(product) {
-        if (!(product instanceof Product)) {
-            throw new TypeError('product parameter is not of Product type')
-        }
+        this.checkProductParam(product)
 
-        this.#products.add(product)
+        this.products.add(product)
         return this
     }
 
@@ -28,8 +25,8 @@ export class ProductSet {
      */
     removeProduct(product) {
         // Is Set have this product ?
-        if (this.#products.has(product)) {
-            this.#products.delete(product)
+        if (this.products.has(product)) {
+            this.products.delete(product)
         }
     }
 
@@ -40,7 +37,7 @@ export class ProductSet {
      * @returns void
      */
     updateProduct(product) {
-        this.#products.forEach((item) => {
+        this.products.forEach((item) => {
             if (item.id === product.id) {
                 this.removeProduct(item)
             }
@@ -49,6 +46,6 @@ export class ProductSet {
     }
 
     getSize() {
-        return this.#products.size
+        return this.products.size
     }
 }

@@ -1,27 +1,26 @@
-import { Product } from "./product.class"
+import { ProductCollection } from "./product-collection"
 
-export class ProductMap {
+
+export class ProductMap extends ProductCollection {
     /**
      * Product Collection
      * @var Map<key: string, value: Product>
      */
-    #products = new Map()
-
-    get products() {
-        return this.#products
+    constructor() {
+       this.products = new Map() 
     }
 
     addProduct(key, product) {
-        this.#checkStringParam(key)
-        this.#checkProductParam(product)
+        this.checkStringParam(key)
+        this.checkProductParam(product)
 
-        this.#products.set(key, product)
+        this.products.set(key, product)
     }
 
     removeProduct(key) {
-        this.#checkStringParam(key)
+        this.checkStringParam(key)
 
-        this.#products.delete(key)
+        this.products.delete(key)
     }
 
     updateProduct(key, product) {
@@ -29,18 +28,6 @@ export class ProductMap {
     }
 
     getSize() {
-        return this.#products.size
-    }
-
-    #checkStringParam(param) {
-        if (!(typeof param == 'string')) {
-            throw new Error('key param is not a string')
-        }
-    }
-
-    #checkProductParam(param) {
-        if (!(param instanceof Product)) {
-            throw new Error('param is not of Product type')
-        }
+        return this.products.size
     }
 }
