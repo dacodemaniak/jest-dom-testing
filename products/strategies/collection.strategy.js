@@ -3,7 +3,7 @@ import { ProductBuilder } from "../product-builder.class"
 
 export class CollectionStrategy {
     /**
-     * @var {ToArrayStrategy | ToMapStrategy | ToSetStrategy}
+     * @var {ProductArray | ProductSet | ProductMap}
      */
     #concreteCollection = null
 

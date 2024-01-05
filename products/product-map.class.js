@@ -30,4 +30,8 @@ export class ProductMap extends ProductCollection {
     getSize() {
         return this.products.size
     }
+
+    getById(id) {
+        return this.products.get(id)
+    }
 }
