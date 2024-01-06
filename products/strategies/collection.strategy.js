@@ -1,5 +1,6 @@
 import { UnimplementedMethodError } from "../exceptions/unimplemented-method.error";
 import { ProductBuilder } from "../product-builder.class"
+import { ProductMap } from "../product-map.class";
 
 export class CollectionStrategy {
     /**
@@ -27,7 +28,11 @@ export class CollectionStrategy {
             productBuilder.id = item.id
             productBuilder.name = item.name
             productBuilder.stock = item.stock
-            this.#concreteCollection.addProduct(productBuilder.build())
+            const product = productBuilder.build()
+            this.#concreteCollection.addProduct(
+                product,
+                this.#concreteCollection instanceof ProductMap ? product.id : null
+            )
         }
         return this.#concreteCollection
     }

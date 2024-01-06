@@ -7,10 +7,11 @@ export class ProductMap extends ProductCollection {
      * @var Map<key: string, value: Product>
      */
     constructor() {
+        super()
        this.products = new Map() 
     }
 
-    addProduct(key, product) {
+    addProduct(product, key) {
         this.checkStringParam(key)
         this.checkProductParam(product)
 

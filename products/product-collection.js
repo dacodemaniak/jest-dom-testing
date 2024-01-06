@@ -20,7 +20,7 @@ export class ProductCollection {
      * @param {Product} product 
      * @returns void
      */
-    addProduct(product) {
+    addProduct(product, ...args) {
         throw new UnimplementedMethodError('addProduct')
     }
 
